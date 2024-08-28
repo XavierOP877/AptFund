@@ -1,0 +1,83 @@
+.campaign-section {
+    padding: 20px;
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    border-radius: 8px;
+}
+
+.campaign-slack {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campaign-slack:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.campaign-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.campaign-info {
+    flex-grow: 1;
+}
+
+.campaign-details {
+    margin-top: 10px;
+    animation: slideDown 0.5s ease-out;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.view-btn, .donate-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-btn {
+    background-color: #6e8efb;
+    color: #ffffff;
+}
+
+.donate-btn {
+    background-color: #ffffff;
+    color: #6e8efb;
+    border: 1px solid #6e8efb;
+}
+
+.view-btn:hover {
+    background-color: #a777e3;
+}
+
+.donate-btn:hover {
+    background-color: #6e8efb;
+    color: #ffffff;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

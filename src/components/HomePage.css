@@ -1,0 +1,281 @@
+/* Hero Section Styles */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.navigate-btn {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #6e8efb;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navigate-btn:hover {
+    background-color: #6e8efb;
+    color: #ffffff;
+}
+
+/* Cards Section Styles */
+.cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.card {
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient background */
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay effect on card hover */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #a777e3, #6e8efb); /* Inverse gradient on hover */
+}
+
+/* zkme-section Styles */
+.zkme-section {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.zkme-section h2 {
+    margin: 0;
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.zkme-section p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+}
+
+.zkme-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.zkme-card {
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient background */
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay effect on zkme-card hover */
+.zkme-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.zkme-card:hover::before {
+    opacity: 1;
+}
+
+.zkme-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #a777e3, #6e8efb); /* Inverse gradient on hover */
+}
+
+/* Keyframes for slide-up animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Slide-up animation class */
+.slide-up {
+    animation: slideUp 2s ease-out;
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #ffffff;
+}
+
+/* New zkme Section for additional cards */
+.zkme-additional-cards {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.zkme-additional-cards h3 {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.zkme-additional-cards p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* Adding extra cards for zkme */
+.zkme-additional-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.zkme-additional-card {
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient background */
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay effect on zkme-additional-card hover */
+.zkme-additional-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.zkme-additional-card:hover::before {
+    opacity: 1;
+}
+
+/* zkme-section Styles */
+.zkme-section {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.zkme-section h2 {
+    margin: 0;
+    font-size: 2em;
+    color: #000000; /* Changed color to bold black */
+    margin-bottom: 20px;
+    font-weight: bold; /* Ensuring the heading is bold */
+}
+
+.zkme-section p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
+}
+
+.zkme-additional-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #a777e3, #6e8efb); /* Inverse gradient on hover */
+}
+
+.zkme-additional-cards h3 {
+    font-size: 1.8em;
+    color: #000000; /* Changed color to bold black */
+    margin-bottom: 20px;
+    font-weight: bold; /* Ensuring the heading is bold */
+}
+
+.zkme-additional-cards p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #000000; /* Changed color to bold black */
+    margin-bottom: 30px;
+}

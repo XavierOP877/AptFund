@@ -1,0 +1,53 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a 3D effect */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+    color: #ffde59; /* Changed hover color for better visibility */
+}
+
+.wallet-info {
+    display: flex;
+    align-items: center;
+}
+
+.wallet-address {
+    font-size: 0.9em;
+    color: #ffffff;
+    margin-right: 10px; /* Space between address and button */
+    font-weight: bold; /* Make the address more prominent */
+}
+
+.wallet-btn {
+    padding: 8px 16px;
+    background-color: #6e8efb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition for hover and click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a slight shadow to buttons */
+}
+
+.wallet-btn:hover {
+    background-color: #a777e3;
+    transform: scale(1.05); /* Slightly enlarges button on hover */
+}
+
+.wallet-btn:active {
+    background-color: #5e7ae1; /* Darker shade on click */
+    transform: scale(0.95); /* Slightly shrinks button on click */
+}

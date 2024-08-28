@@ -9,6 +9,9 @@
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "paths": {
+      "@aptos-labs/*": ["/node_modules/@aptos-labs/*"]
+    },
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

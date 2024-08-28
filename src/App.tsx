@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
+import HomePage from './components/HomePage';
+import Campaigns from './pages/Campaigns';
+import CreateCampaign from './pages/CreateCampaign';
+import Swap from './pages/Swap';
+import Profile from './pages/Profile';
+import Navbar from './components/Navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/home" element={<><Navbar /><HomePage /></>} />
+                <Route path="/campaigns" element={<><Navbar /><Campaigns /></>} />
+                <Route path="/create-campaign" element={<><Navbar /><CreateCampaign /></>} />
+                <Route path="/swap" element={<><Navbar /><Swap /></>} />
+                <Route path="/profile" element={<><Navbar /><Profile /></>} />
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;
