@@ -34,7 +34,7 @@ const CreateCampaign: React.FC<CreateCampaignProps> = ({ addCampaign, isWalletCo
             const response = await signAndSubmitTransaction({
                 sender: account?.address,
                 data: {
-                    function: "0x1e0c21e544134356a93dca406a7de690c1138e6b01b55b896aef0f1933bb1053::crowdfunding::initialize_campaign",
+                    function: "0xf1d15d76f817f72d70b1b6c1db64b88f94d5e326feec95ab6263fd983a5a7acb::crowdfunding::initialize_campaign",
                     typeArguments: ["0x1::aptos_coin::AptosCoin"],
                     functionArguments: [],
                 },
@@ -64,7 +64,7 @@ const CreateCampaign: React.FC<CreateCampaignProps> = ({ addCampaign, isWalletCo
         const response = await signAndSubmitTransaction({
             sender: account?.address,
             data: {
-                function: "0x1e0c21e544134356a93dca406a7de690c1138e6b01b55b896aef0f1933bb1053::crowdfunding::initialize_crowdfunding",
+                function: "0xf1d15d76f817f72d70b1b6c1db64b88f94d5e326feec95ab6263fd983a5a7acb::crowdfunding::initialize_crowdfunding",
                 typeArguments: ["0x1::aptos_coin::AptosCoin"],
                 functionArguments: [title, targetFunds, differenceInMinutes],
             },
