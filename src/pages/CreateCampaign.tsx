@@ -25,8 +25,28 @@ const CreateCampaign: React.FC<CreateCampaignProps> = ({ addCampaign, isWalletCo
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [imageUrl, setImageUrl] = useState('');
+    const [status, setStatus] = useState('');
 
-    const {account, signAndSubmitTransaction,} = useWallet();
+    const { account, signAndSubmitTransaction, } = useWallet();
+
+    const initializeCampaigns = async () => {
+        try {
+            const response = await signAndSubmitTransaction({
+                sender: account?.address,
+                data: {
+                    function: "0x1e0c21e544134356a93dca406a7de690c1138e6b01b55b896aef0f1933bb1053::crowdfunding::initialize_campaign",
+                    typeArguments: ["0x1::aptos_coin::AptosCoin"],
+                    functionArguments: [],
+                },
+            });
+            console.log(response);
+
+            setStatus('Campaigns initialized successfully!');
+        } catch (error) {
+            console.error(error);
+            setStatus('Error initializing campaigns.');
+        }
+    }
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -44,11 +64,11 @@ const CreateCampaign: React.FC<CreateCampaignProps> = ({ addCampaign, isWalletCo
         const response = await signAndSubmitTransaction({
             sender: account?.address,
             data: {
-              function: "0xf1d15d76f817f72d70b1b6c1db64b88f94d5e326feec95ab6263fd983a5a7acb::crowdfunding::initialize_crowdfunding",
-              typeArguments: ["0x1::aptos_coin::AptosCoin"],
-              functionArguments: [targetFunds, differenceInMinutes],
+                function: "0x1e0c21e544134356a93dca406a7de690c1138e6b01b55b896aef0f1933bb1053::crowdfunding::initialize_crowdfunding",
+                typeArguments: ["0x1::aptos_coin::AptosCoin"],
+                functionArguments: [title, targetFunds, differenceInMinutes],
             },
-          });
+        });
         console.log(response);
 
         const newCampaign = {

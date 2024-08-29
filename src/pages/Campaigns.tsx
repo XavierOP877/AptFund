@@ -1,5 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Campaigns.css';
+import { useWallet } from '@aptos-labs/wallet-adapter-react';
+import { Account,
+    Aptos,
+    AptosConfig,
+    Network, } from '@aptos-labs/ts-sdk';
+
+    const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptos = new Aptos(aptosConfig);
 
 type Campaign = {
     id: number;
@@ -15,8 +23,31 @@ type CampaignsProps = {
     campaigns: Campaign[];
 };
 
+type Coin = { coin: { value: string } };
+
 const Campaigns: React.FC<CampaignsProps> = ({ campaigns }) => {
+
+    const { account, signAndSubmitTransaction, } = useWallet();
+
     const [expandedId, setExpandedId] = useState<number | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchCampaigns = async () => {
+            try {
+                const response = await aptos.getAccountResource({
+                    accountAddress: "0x1e0c21e544134356a93dca406a7de690c1138e6b01b55b896aef0f1933bb1053",
+                    resourceType: "0x1e0c21e544134356a93dca406a7de690c1138e6b01b55b896aef0f1933bb1053::crowdfunding::Campaigns",
+                  });
+                console.log(response);
+            } catch (err) {
+                console.log(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchCampaigns();
+    }, []);
 
     const toggleExpand = (id: number) => {
         setExpandedId(expandedId === id ? null : id);
