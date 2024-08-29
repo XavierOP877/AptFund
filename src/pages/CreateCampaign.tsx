@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './CreateCampaign.css'; // Import the CSS for styling
+import { useWallet } from '@aptos-labs/wallet-adapter-react';
 
 // Define the Campaign type
 type Campaign = {
@@ -25,13 +26,30 @@ const CreateCampaign: React.FC<CreateCampaignProps> = ({ addCampaign, isWalletCo
     const [endDate, setEndDate] = useState('');
     const [imageUrl, setImageUrl] = useState('');
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const {account, signAndSubmitTransaction,} = useWallet();
+
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
         if (!isWalletConnected) {
             alert('Please connect your wallet first.');
             return;
         }
+
+        const start = new Date(startDate).getTime();
+        const end = new Date(endDate).getTime();
+        const differenceInMilliseconds = end - start;
+        const differenceInMinutes = differenceInMilliseconds / (1000 * 60);
+
+        const response = await signAndSubmitTransaction({
+            sender: account?.address,
+            data: {
+              function: "0xf1d15d76f817f72d70b1b6c1db64b88f94d5e326feec95ab6263fd983a5a7acb::crowdfunding::initialize_crowdfunding",
+              typeArguments: ["0x1::aptos_coin::AptosCoin"],
+              functionArguments: [targetFunds, differenceInMinutes],
+            },
+          });
+        console.log(response);
 
         const newCampaign = {
             id: Date.now(), // Simple unique ID for demo
