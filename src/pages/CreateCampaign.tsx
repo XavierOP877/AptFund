@@ -66,7 +66,7 @@ const CreateCampaign: React.FC<CreateCampaignProps> = ({ addCampaign, isWalletCo
             data: {
                 function: "0xf1d15d76f817f72d70b1b6c1db64b88f94d5e326feec95ab6263fd983a5a7acb::crowdfunding::initialize_crowdfunding",
                 typeArguments: ["0x1::aptos_coin::AptosCoin"],
-                functionArguments: [title, targetFunds, differenceInMinutes],
+                functionArguments: [targetFunds, differenceInMinutes],
             },
         });
         console.log(response);
