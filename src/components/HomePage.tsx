@@ -16,20 +16,20 @@ const HomePage: React.FC = () => {
             {/* Cards Section */}
             <section className="cards-section slide-up">
                 <div className="card">
-                    <h3>Feature 1</h3>
-                    <p>Explains a key feature of our crowdfunding platform.</p>
+                    <h3>Trust through Blockchain</h3>
+                    <p>Utilizes the Aptos blockchain to ensure transparency in fund allocation.</p>
                 </div>
                 <div className="card">
-                    <h3>Feature 2</h3>
-                    <p>Highlights another significant aspect of the platform.</p>
+                    <h3>Low Fees </h3>
+                    <p>Minimal transaction fees thanks to decentralized technology.</p>
                 </div>
                 <div className="card">
-                    <h3>Feature 3</h3>
-                    <p>Details more on how our platform benefits users.</p>
+                    <h3>Simple Campaign Creation</h3>
+                    <p>Easy-to-use interface for launching and managing campaigns.</p>
                 </div>
                 <div className="card">
-                    <h3>Feature 4</h3>
-                    <p>Provides insights into additional features.</p>
+                    <h3>Secure Transactions</h3>
+                    <p>All transactions are secured through smart contracts written in Move.</p>
                 </div>
             </section>
 
